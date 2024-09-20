@@ -1,12 +1,17 @@
 
+
+
+
 import TableNew from './pages/tableNew';
 import TableUser from './pages/tableUser';
 import TableCategory from './pages/tableCategory';
+import Index from './pages/index';
+
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import "./App.css";
+
 
 const routes = createBrowserRouter([
-  { path: '/', element: <app /> },
+  { path: '/', element: <Index /> },
   { path: '/users', element: <TableUser /> },
   { path: '/news', element: <TableNew /> },
   {path: '/categories', element: <TableCategory />},
