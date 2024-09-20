@@ -1,5 +1,6 @@
 import axios from "axios";
 const baseUrl = "http://localhost:8083/api_user/";
+
 export class UserService {
     getAll() {
         return axios.get(`${baseUrl}list`)

@@ -1,26 +1,28 @@
-import tableUser from '../components/tableUser';
-import { BrowserRouter, Route, Link } from 'react-router-dom';
+import TableUser from "./pages/tableUser";
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import "./App.css";
 
+const routes = createBrowserRouter([
+  { path: '/', element: <app /> },
+  { path: '/users', element: <TableUser /> },
+])
 
 function App() {
- 
-  
   return (
     <>
-     <BrowserRouter>
-      <div>
-        <h1>App</h1>
-        <nav>
-          <ul>
-            <li><Link to="/home">Home</Link></li>
-         
-          </ul>
-        </nav>
-        <Route path="/home" element={<tableUser />} />
       
-      </div>
-    </BrowserRouter>
+        <div>
+          <h1>App</h1>
+          <nav>
+            <ul>
+              <li>
+                < a href="/users">users</a>
+              </li>
+            </ul>
+          </nav>
+          <RouterProvider router={routes} />
+        </div>
+   
     </>
   );
 }

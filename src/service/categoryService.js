@@ -1,5 +1,6 @@
 import axios from "axios";
 const baseUrl = "http://localhost:8083/api_category/";
+
 export class NewService {
     getAll() {
         return axios.get(`${baseUrl}list_category`)
