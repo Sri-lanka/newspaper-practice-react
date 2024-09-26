@@ -2,23 +2,19 @@ import Button from '@mui/material/Button';
 import SearchIcon from '@mui/icons-material/Search';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
-import Accordion from '@mui/material/Accordion';
-import Card from '@mui/material/Card';
-import Box from '@mui/material/Box';
 
-import Stack from '@mui/material/Stack';
-import Divider from '@mui/material/Divider';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import AccordionDetails from '@mui/material/AccordionDetails';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import CoPresentIcon from '@mui/icons-material/CoPresent';
+
+import ButtonGroup from '@mui/material/ButtonGroup';
+
 export default function Index() {
 
 
   return (
     <>
-      <div className="grid grid-cols-5 grid-rows-5 gap-0">
-        <div className="col-span-5 bg-blue-500">
+
+      <div className="min-h-screen flex flex-col">
+        {/* Header Section */}
+        <div className="bg-blue-500 p-4">
           <div className="flex items-center p-4 rounded-md">
             <SearchIcon fontSize='large' className="ml-4 mr-2" />
             <TextField id="standard-basic" label="Search New" variant="standard" />
@@ -26,119 +22,51 @@ export default function Index() {
             <Button variant="contained">Iniciar Sesión</Button>
           </div>
         </div>
-        <div className="col-span-5 row-span-3 row-start-2 bg-green-500">
-          <div>
-            <div>
-              <Accordion>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel1-content"
-                >
-                  Deportes
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Card variant="outlined" sx={{ maxWidth: 360 }}>
-                    <Box sx={{ p: 2 }}>
-                      <Stack
-                        direction="row"
-                        sx={{ justifyContent: 'space-between', alignItems: 'center' }}
-                      >
-                        <Typography gutterBottom variant="h5" component="div">
-                          titulo
-                        </Typography>
-                        <Typography gutterBottom variant="h6" component="div">
-                          usuario
-                          <CoPresentIcon></CoPresentIcon>
-                        </Typography>
-                      </Stack>
-                      <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                        Pinstriped cornflower blue cotton blouse takes you on a walk to the park or
-                        just down the hall.
-                      </Typography>
-                    </Box>
-                  </Card>
-                </AccordionDetails>
-              </Accordion>
-            </div>
-            <div>
-              <Accordion sx={{ bgcolor: 'red', color: 'white' }}>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel1-content"
-                  id="panel1-header"
-                >
-                  Categories
-                </AccordionSummary>
-                <AccordionDetails>
-                  <a>News</a><br />
-                  <a>Sports</a><br />
-                  <a>Technology</a><br />
-                  <a>Entertainment</a><br />
-                  <a>Politics</a><br />
-                </AccordionDetails>
-              </Accordion>
-            </div>
-            <div>
-              <Accordion sx={{ bgcolor: 'red', color: 'white' }}>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel1-content"
-                  id="panel1-header"
-                >
-                  Categories
-                </AccordionSummary>
-                <AccordionDetails>
-                  <a>News</a><br />
-                  <a>Sports</a><br />
-                  <a>Technology</a><br />
-                  <a>Entertainment</a><br />
-                  <a>Politics</a><br />
-                </AccordionDetails>
-              </Accordion>
-            </div>
-            <div>
-              <Accordion sx={{ bgcolor: 'red', color: 'white' }}>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel1-content"
-                  id="panel1-header"
-                >
-                  Categories
-                </AccordionSummary>
-                <AccordionDetails>
-                  <a>News</a><br />
-                  <a>Sports</a><br />
-                  <a>Technology</a><br />
-                  <a>Entertainment</a><br />
-                  <a>Politics</a><br />
-                </AccordionDetails>
-              </Accordion>
-            </div>
-            <div>
-            <Accordion sx={{ bgcolor: 'red', color: 'white' }}>
-              <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
-                aria-controls="panel1-content"
-                id="panel1-header"
-              >
-                Categories
-              </AccordionSummary>
-              <AccordionDetails>
-                <a>News</a><br />
-                <a>Sports</a><br />
-                <a>Technology</a><br />
-                <a>Entertainment</a><br />
-                <a>Politics</a><br />
-              </AccordionDetails>
-            </Accordion>
+
+        {/* Navigation Section */}
+        <nav className='flex items-center justify-center bg-white'>
+          <ButtonGroup variant="text" aria-label="Basic button group">
+            <Button>Deportes</Button>
+            <Button>Salud</Button>
+            <Button>Entretenimiento</Button>
+            <Button>Tecnología</Button>
+            <Button>Política</Button>
+          </ButtonGroup>
+        </nav>
+
+        {/* Main Content */}
+        <div className="flex-grow bg-green-500">
+          <div className="grid grid-cols-5 grid-rows-4 gap-4 items-center justify-content">
+            <div>1</div>
+            <div className="col-start-1 row-start-2 bg-yellow-500" >2</div>
+            <div className="col-start-1 row-start-3">3</div>
+            <div className="col-start-1 row-start-4">4</div>
+            <div className="col-start-2 row-start-1">5</div>
+            <div className="col-start-2 row-start-2">6</div>
+            <div className="col-start-2 row-start-3">7</div>
+            <div className="col-start-2 row-start-4">8</div>
+            <div className="col-start-3 row-start-1">9</div>
+            <div className="col-start-3 row-start-2">10</div>
+            <div className="col-start-3 row-start-3">11</div>
+            <div className="col-start-3 row-start-4">12</div>
+            <div className="col-start-4 row-start-1">13</div>
+            <div className="col-start-4 row-start-2">14</div>
+            <div className="col-start-4 row-start-3">15</div>
+            <div className="col-start-4 row-start-4">16</div>
+            <div className="col-start-5 row-start-1">17</div>
+            <div className="col-start-5 row-start-2">18</div>
+            <div className="col-start-5 row-start-3">19</div>
+            <div >20</div>
           </div>
-          </div>
+
         </div>
-        <div className="col-span-5 row-start-5 bg-yellow-500">
-          <div class="container" className='items-center'>
+
+        {/* Footer */}
+        <footer className="bg-yellow-500">
+          <div className='text-center p-4'>
             <p>&copy; 2024 Mi Periódico. Todos los derechos reservados.</p>
           </div>
-        </div>
+        </footer>
       </div>
 
     </>
