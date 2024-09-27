@@ -5,7 +5,9 @@ export class NewService {
     getAll() {
         return axios.get(`${baseUrl}list_news`)
     }
-
+    getRecentNews() {
+        return axios.get(`${baseUrl}recent_new`)
+    }
     getNewById(id) {
         return axios.get(`${baseUrl}get_new/${id}`)
     }

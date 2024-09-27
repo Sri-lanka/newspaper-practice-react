@@ -1,10 +1,13 @@
+import { NewsProvider } from "./components/NewsContext";
 import Index from "./pages/index";
+import TableNew from "./pages/tableNew";
 
 function App() {
   return (
-    <>
-   <Index />
-    </>
+    <NewsProvider news={[]}>
+      <Index />
+      <TableNew></TableNew>
+    </NewsProvider>
   );
 }
 
