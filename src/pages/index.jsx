@@ -2,9 +2,10 @@
 
 {/* Components */}
 import NavegationSet from '../components/NavegationSet';
+import CenterSection from '../components/CenterSection';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
-import MainContent from '../components/MainContent';
+//import MainContent from '../components/MainContent';
 
 export default function Index() {
 
@@ -17,10 +18,11 @@ export default function Index() {
         <Header></Header>
 
         {/* Navigation Section */}
-        <NavegationSet></NavegationSet>
-
+         <NavegationSet></NavegationSet>
+      
         {/* Main Content */}
-        <MainContent></MainContent>
+        <CenterSection></CenterSection>
+
         {/* Footer */}
        <Footer></Footer>
       </div>

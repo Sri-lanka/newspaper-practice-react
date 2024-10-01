@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+/*import { useEffect, useState } from "react";
 //import "/App.css";
 import { UserService } from "../service/userService";
 const userService = new UserService();
@@ -93,5 +93,5 @@ export default function TableUser() {
     </>
   );
 }
-
+*/
 

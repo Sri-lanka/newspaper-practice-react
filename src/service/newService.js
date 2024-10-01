@@ -5,8 +5,13 @@ export class NewService {
     getAll() {
         return axios.get(`${baseUrl}list_news`)
     }
-    getRecentNews() {
-        return axios.get(`${baseUrl}recent_new`)
+    getRecentNews(page_number, page_size = 10) {
+        return axios.get(`${baseUrl}recent_new`, {
+            params: {
+                page_number: page_number,
+                page_size: page_size,
+            },
+        })
     }
     getNewById(id) {
         return axios.get(`${baseUrl}get_new/${id}`)
@@ -28,7 +33,7 @@ export class NewService {
         })
     }
 
-    deleteNew(id){
+    deleteNew(id) {
         return axios.delete(`${baseUrl}delete_new/${id}`)
     }
 }

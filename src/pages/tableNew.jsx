@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+/*import { useEffect, useState } from "react";
 //import "/App.css";
 import { NewService } from "../service/newService";
 import { UserService } from "../service/userService";
@@ -21,6 +21,7 @@ export default function TableNew() {
     user: { id: null },
     category: { id: null },
   });
+
   const [newId, setNewId] = useState(null);
 
   useEffect(() => {
@@ -158,3 +159,4 @@ export default function TableNew() {
     </>
   );
 }
+*/

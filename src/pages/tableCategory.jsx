@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+/*import { useEffect, useState } from "react";
 //import "/App.css";
 import {CategoryService } from "../service/categoryService";
 
@@ -88,6 +88,6 @@ export default function TableCategory() {
       </div>
     </>
   );
-}
+}*/
 
 

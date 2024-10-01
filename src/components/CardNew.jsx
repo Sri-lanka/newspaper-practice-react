@@ -4,36 +4,35 @@ import CardActions from '@mui/material/CardActions';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 
-import { NewService } from "../service/newService";
-import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const newService = new NewService();
 
-export default function CardNew() {
-    const [news, setNews] = useState([]);
 
-    useEffect(() => {
-        newService.getRecentNews().then((response) => setNews(response.data));
-    }, []);
-
+export default function CardNew({newItem}) {
+    
+    const navigate = useNavigate();
+  
+    const handleViewDetails = () => {
+        navigate(`/news/${newItem.id}`); // Redirige a la ruta de detalles
+    };
     return (
         <>
-        {news.map((u) => (
-            <Card key={u.id} sx={{ maxWidth: 345 }}>
+    
+            <Card  sx={{ maxWidth: 345 }}>
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
-                        {u.title}
+                        {newItem.title}
                     </Typography>
                     <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                        {u.content}
+                        {newItem.content}
                     </Typography>
                 </CardContent>
                 <CardActions>
-                    <Button size="small">Learn More</Button>
-                    <Button size="small">{u.user.userName}</Button>
+                    <Button size="small" onClick={handleViewDetails}>Learn More</Button>
+                    <Button size="small">@{newItem.user.userName}</Button>
                 </CardActions>
             </Card>
-            ))}
+          
         </>
     );
 }

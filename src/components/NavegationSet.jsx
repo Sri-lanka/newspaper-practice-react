@@ -9,11 +9,11 @@ export default function NavegationSet() {
             <nav className='flex items-center justify-center bg-white'>
                 <ButtonGroup variant="text" aria-label="Basic button group">
                     <Button>Home</Button>
-                    <Button>Deportes</Button>
-                    <Button>Salud</Button>
-                    <Button>Entretenimiento</Button>
-                    <Button>Tecnología</Button>
-                    <Button>Política</Button>
+                    <Button>Politics</Button>
+                    <Button>Sports</Button>
+                    <Button>Technology</Button>
+                    <Button>Entertainment</Button>
+                    <Button>Health</Button>
                 </ButtonGroup>
             </nav>
 
