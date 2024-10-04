@@ -12,6 +12,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<Index><MainContent/></Index>} />
                 <Route path="/news/:id" element={<Index><NewsDetails /></Index>} />
+                <Route path="/user_news/:id" element={<Index><MainContent/></Index>} />
             </Routes>
         </Router>
     </NewsProvider>

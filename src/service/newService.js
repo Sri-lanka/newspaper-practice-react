@@ -5,11 +5,20 @@ export class NewService {
     getAll() {
         return axios.get(`${baseUrl}list_news`)
     }
-    getRecentNews(page_number, page_size = 10) {
+    getRecentNews(page_number, page_size=10 ) {
         return axios.get(`${baseUrl}recent_new`, {
             params: {
                 page_number: page_number,
                 page_size: page_size,
+            },
+        })
+    }
+
+    getNewsByUser( page_number, page_size , id  ) {
+        return axios.get(`${baseUrl}list_news/${id}`, {
+            params: {
+                offset: page_number,
+                limit: page_size,
             },
         })
     }

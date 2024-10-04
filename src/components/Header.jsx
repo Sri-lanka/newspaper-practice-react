@@ -12,6 +12,7 @@ import { useNavigate } from 'react-router-dom';
 export default function Header() {
 
     const { news, setNews } = useNews();
+
     useEffect(() => {
         newService.getAll().then((response) => setNews(response.data));
     }, []);
@@ -19,13 +20,18 @@ export default function Header() {
     const navigate = useNavigate();
 
     const handleSelect = (event, value) =>{
+        if (!value) {
+            navigate('/'); 
+            return; 
+        }
         const selectedNew = news.find(option => option.title === value);
         if(selectedNew) {
-            navigate("/")
+            handleViewDetails(selectedNew.id)
         }
     }
-    const handleViewDetails = () => {
-        navigate(`/news/${newItem.id}`); // Redirige a la ruta de detalles
+
+    const handleViewDetails = (id) => {
+        navigate(`/news/${id}`);
     };
 
     return (
@@ -37,8 +43,9 @@ export default function Header() {
                         id='news-search'
                         freeSolo
                         options={news.map((option) => option.title)}
+                        onChange={handleSelect} 
                         renderInput={(params) =>
-                            <TextField sx={{ width: 250 }}  {...params} id="standard-basic" label="Search New" variant="standard" />}
+                            <TextField  sx={{ width: 250 }}  {...params} id="standard-basic" label="Search New" variant="standard" />}
                     />
 
                     <Typography sx={{ mx: 'auto', mr: 84, fontFamily: 'monospace' }} variant='h3'>My Newspaper</Typography>

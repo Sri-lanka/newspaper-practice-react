@@ -49,10 +49,10 @@ export default function NewsDetails() {
             </CardActionArea>
             <CardActions>
               <Button size="small" color="primary">
-                {newsItem.user?.userName ?? "HOLA"}
+                {newsItem.user?.userName ?? "loading"}
               </Button>
               <Button size="small" color="primary">
-                {newsItem.category?.nameCategory ?? "HOLA"}
+                {newsItem.category?.nameCategory ?? "loading"}
               </Button>
             </CardActions>
           </Card>

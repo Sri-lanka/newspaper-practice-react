@@ -15,6 +15,9 @@ export default function CardNew({newItem}) {
     const handleViewDetails = () => {
         navigate(`/news/${newItem.id}`); // Redirige a la ruta de detalles
     };
+    const handleUserNews = ()=> {
+        navigate(`/user_news/${newItem.user.id}`)
+    }
     return (
         <>
     
@@ -29,7 +32,7 @@ export default function CardNew({newItem}) {
                 </CardContent>
                 <CardActions>
                     <Button size="small" onClick={handleViewDetails}>Learn More</Button>
-                    <Button size="small">@{newItem.user.userName}</Button>
+                    <Button size="small" onClick={handleUserNews}>@{newItem.user.userName}</Button>
                 </CardActions>
             </Card>
           
