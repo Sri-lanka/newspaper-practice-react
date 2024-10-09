@@ -4,7 +4,7 @@ import CardActions from "@mui/material/CardActions";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import CardActionArea from "@mui/material/CardActionArea";
-
+import { useNavigate } from 'react-router-dom';
 import { useParams } from "react-router-dom";
 import { NewService } from "../service/newService";
 import { useEffect, useState } from "react";
@@ -14,7 +14,14 @@ export default function NewsDetails() {
   const { id } = useParams();
   const [newsItem, setNewsItem] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const navigate = useNavigate();
 
+  const handleCategory = () => {
+    navigate(`/category_news/${newsItem.category.id}`); // Redirige a la ruta de detalles
+};
+const handleUser = ()=> {
+    navigate(`/user_news/${newsItem.user.id}`)
+}
   useEffect(() => {
     const fetchNewsDetail = async () => {
       try {
@@ -48,10 +55,10 @@ export default function NewsDetails() {
               </CardContent>
             </CardActionArea>
             <CardActions>
-              <Button size="small" color="primary">
+              <Button size="small" color="primary" onClick={handleUser}>
                 {newsItem.user?.userName ?? "loading"}
               </Button>
-              <Button size="small" color="primary">
+              <Button size="small" color="primary" onClick={handleCategory}>
                 {newsItem.category?.nameCategory ?? "loading"}
               </Button>
             </CardActions>

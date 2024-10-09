@@ -8,17 +8,32 @@ export default function NavegationSet() {
     const handleHome = () => {
         navigate('/');
     }
+    const handlePolitics = () => {
+        navigate('/category_news/1');
+    }
+    const handleSports = () => {
+        navigate('/category_news/2');
+    }
+    const handleTecnology = () => {
+        navigate('/category_news/3');
+    }
+    const handleEntertainment = () => {
+        navigate('/category_news/4');
+    }
+    const handleHealth = () => {
+        navigate('/category_news/5');
+    }
     return (
         <>
         
             <nav className='flex items-center justify-center bg-white'>
                 <ButtonGroup variant="text" aria-label="Basic button group">
                     <Button onClick={handleHome}>Home</Button>
-                    <Button>Politics</Button>
-                    <Button>Sports</Button>
-                    <Button>Technology</Button>
-                    <Button>Entertainment</Button>
-                    <Button>Health</Button>
+                    <Button onClick={handlePolitics}>Politics</Button>
+                    <Button onClick={handleSports}>Sports</Button>
+                    <Button onClick={handleTecnology}>Technology</Button>
+                    <Button onClick={handleEntertainment}>Entertainment</Button>
+                    <Button onClick={handleHealth}>Health</Button>
                 </ButtonGroup>
             </nav>
 

@@ -8,34 +8,41 @@ import { useNavigate } from 'react-router-dom';
 
 
 
-export default function CardNew({newItem}) {
-    
+export default function CardNew({ newItem }) {
+
     const navigate = useNavigate();
-  
+
     const handleViewDetails = () => {
         navigate(`/news/${newItem.id}`); // Redirige a la ruta de detalles
     };
-    const handleUserNews = ()=> {
+    const handleUserNews = () => {
         navigate(`/user_news/${newItem.user.id}`)
     }
+
+    const truncate = (title, limit) => {
+        if (title.length > limit) {
+            return title.slice(0, limit - 3) + '...';
+        }
+        return title;
+    };
     return (
         <>
-    
-            <Card  sx={{ maxWidth: 345 }}>
+
+            <Card sx={{ maxWidth: 345, minHeight: 200, maxHeight: 200 }}>
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
                         {newItem.title}
                     </Typography>
                     <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                        {newItem.content}
+                        {truncate(newItem.content, 100)}
                     </Typography>
                 </CardContent>
-                <CardActions>
+                <CardActions sx={{ marginBlock: "auto"}}>
                     <Button size="small" onClick={handleViewDetails}>Learn More</Button>
                     <Button size="small" onClick={handleUserNews}>@{newItem.user.userName}</Button>
                 </CardActions>
             </Card>
-          
+
         </>
     );
 }

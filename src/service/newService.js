@@ -5,7 +5,7 @@ export class NewService {
     getAll() {
         return axios.get(`${baseUrl}list_news`)
     }
-    getRecentNews(page_number, page_size=10 ) {
+    getRecentNews(page_number, page_size ) {
         return axios.get(`${baseUrl}recent_new`, {
             params: {
                 page_number: page_number,
@@ -14,7 +14,7 @@ export class NewService {
         })
     }
 
-    getNewsByUser( page_number, page_size , id  ) {
+    getNewsByUser( page_number, page_size, id  ) {
         return axios.get(`${baseUrl}list_news/${id}`, {
             params: {
                 offset: page_number,
@@ -22,6 +22,16 @@ export class NewService {
             },
         })
     }
+
+    getNewsByCategory( page_number, page_size, id_category){
+        return axios.get(`${baseUrl}category_new/${id_category}`, {
+            params: {
+                offset: page_number,
+                limit: page_size,
+            },
+        })
+    }
+    
     getNewById(id) {
         return axios.get(`${baseUrl}get_new/${id}`)
     }
