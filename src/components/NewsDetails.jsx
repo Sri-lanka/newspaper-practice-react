@@ -18,10 +18,10 @@ export default function NewsDetails() {
 
   const handleCategory = () => {
     navigate(`/category_news/${newsItem.category.id}`); // Redirige a la ruta de detalles
-};
-const handleUser = ()=> {
+  };
+  const handleUser = () => {
     navigate(`/user_news/${newsItem.user.id}`)
-}
+  }
   useEffect(() => {
     const fetchNewsDetail = async () => {
       try {

@@ -5,6 +5,9 @@ export class UserService {
     getAll() {
         return axios.get(`${baseUrl}list`)
     }
+    getTopUsers(){
+        return axios.get(`${baseUrl}top_users`)
+    }
 
     getUserById(id) {
         return axios.get(`${baseUrl}get_user/${id}`)
@@ -28,5 +31,14 @@ export class UserService {
 
     deleteUser(id){
         return axios.delete(`${baseUrl}delete_user/${id}`)
+    }
+
+    loginUser(userName, password){
+        return axios.get(`${baseUrl}check`,{
+            params: {
+                userName: userName,
+                password: password,
+            },
+        })
     }
 }

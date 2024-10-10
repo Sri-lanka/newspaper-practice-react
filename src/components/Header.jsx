@@ -10,10 +10,18 @@ const newService = new NewService();
 import { useNavigate } from "react-router-dom";
 
 export default function Header() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [newNames, setNewNames] = useState([]);
 
   useEffect(() => {
     newService.getAll().then((response) => setNewNames(response.data));
+  }, []);
+  useEffect(() => {
+    // Verificar si hay datos en local storage
+    const userData = localStorage.getItem('user');
+    if (userData) {
+      setIsLoggedIn(true);
+    }
   }, []);
 
   const navigate = useNavigate();
@@ -60,7 +68,16 @@ export default function Header() {
           >
             My Newspaper
           </Typography>
-          <Button variant="contained">Iniciar Sesión</Button>
+
+
+          {!isLoggedIn ? (
+            <Button variant="contained">Iniciar Sesión</Button>
+          ) : (
+            <div>
+              <Button variant="contained" onClick={() => console.log('Logout')}>Cerrar Sesión</Button>
+              <img className="h-14 w-14" src="../../public/gif/neco-arc-neco.gif" alt="" />
+            </div>
+          )}
         </div>
       </div>
     </>
