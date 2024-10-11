@@ -1,5 +1,5 @@
-/*import { useEffect, useState } from "react";
-//import "/App.css";
+import { useEffect, useState } from "react";
+import "/App.css";
 import { NewService } from "../service/newService";
 import { UserService } from "../service/userService";
 import { CategoryService } from "../service/categoryService";
@@ -159,4 +159,3 @@ export default function TableNew() {
     </>
   );
 }
-*/

@@ -16,13 +16,13 @@ export default function Header() {
   useEffect(() => {
     newService.getAll().then((response) => setNewNames(response.data));
   }, []);
+
   useEffect(() => {
-    // Verificar si hay datos en local storage
     const userData = localStorage.getItem('user');
     if (userData) {
       setIsLoggedIn(true);
     }
-  }, []);
+  }, [isLoggedIn]);
 
   const navigate = useNavigate();
 
@@ -40,6 +40,13 @@ export default function Header() {
   const handleViewDetails = (id) => {
     navigate(`/news/${id}`);
   };
+  const handleLogin = () =>{
+    navigate(`/login`)
+  }
+  const handleLogout = () =>{
+    localStorage.removeItem('user');
+    setIsLoggedIn(false);
+  }
 
   return (
     <>
@@ -71,11 +78,12 @@ export default function Header() {
 
 
           {!isLoggedIn ? (
-            <Button variant="contained">Iniciar Sesión</Button>
+            <Button variant="contained" onClick={handleLogin}>Iniciar Sesión</Button>
           ) : (
-            <div>
-              <Button variant="contained" onClick={() => console.log('Logout')}>Cerrar Sesión</Button>
-              <img className="h-14 w-14" src="../../public/gif/neco-arc-neco.gif" alt="" />
+            <div className="flex items-center" >
+              <Button variant="contained" onClick={handleLogout}>Cerrar Sesión</Button>
+              <Button variant="contained" >Crear noticia</Button>
+              <img className="w-24 h-auto  " src="../../public/gif/neco-arc-transparent.gif"  />
             </div>
           )}
         </div>

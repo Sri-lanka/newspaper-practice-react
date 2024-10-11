@@ -41,4 +41,10 @@ export class UserService {
             },
         })
     }
+
+    registerUser(user){
+        return axios.post(`${baseUrl}register`, user ,{
+            headers: {'Content-Type': 'application/json'}
+        })
+    }
 }
