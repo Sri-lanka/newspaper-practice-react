@@ -1,6 +1,6 @@
 # 📰 MyNewspaper - Frontend
 
-Welcome to the **MyNewspaper** frontend! This is a modern, responsive web application built with **React** and **TailwindCSS**, aimed at delivering news in a dynamic, user-friendly manner. It integrates with a Spring Boot backend, providing features such as user registration, login, news creation, and categorization. The backend API is consumed using **Axios** to handle requests efficiently.
+Welcome to **MyNewspaper** interface! This is a modern, responsive web application built with **React** and **TailwindCSS**, which aims to deliver news in a dynamic and easy-to-use way. It integrates with a Spring Boot backend and provides features such as user registration, login, news creation, and categorization. The backend API is consumed by **Axios** to handle requests efficiently. The backend repository is located here: https://github.com/OscarNavarrolol/newspaper-practice
 
 ## 🚀 Features
 
