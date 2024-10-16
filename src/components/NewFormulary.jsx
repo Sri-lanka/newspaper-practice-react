@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { TextField, Button, Typography, Container, Paper, FormControl, InputLabel, Select, MenuItem } from '@mui/material';
-import { json, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { NewService } from '../service/newService';
 import { CategoryService } from '../service/categoryService';
 
@@ -8,10 +8,9 @@ const newService = new NewService();
 const categoryService = new CategoryService();
 
 export default function NewFormulary() {
-
+    const { id } = useParams();
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
-    
     const [categories, setCategories] = useState([]);
     const [category, setCategory] = useState({ id: null });
     const [error, setError] = useState('')
@@ -19,27 +18,42 @@ export default function NewFormulary() {
 
     useEffect(() => {
         categoryService.getAll().then((response) => setCategories(response.data));
-    }, []);
+        if (id) {
+            newService.getNewById(id).then((response) => {
+                setTitle(response.data.title);
+                setContent(response.data.content);
+                setCategory({ id: response.data.category.id });
+            }).catch(err => {
+                setError("Failed to load article data.");
+                console.error('Error fetching article:', err);
+            });
+        }
+    }, [id]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         const now = new Date().toISOString();
-        const userData =  localStorage.getItem('user');
+        const userData = localStorage.getItem('user');
         const user = JSON.parse(userData);
+        console.log(user);
         const newu = {
             title,
             content,
             publicationDate: now,
             user: { id: user.id },
-            category: { id: category },
+            category: { id: category.id },
         };
 
 
         try {
-
-            const response = await newService.createNew(newu)
-            console.log('Article created successfully:', response.data);
-            navigate('/')
+            if (id) {
+                const response = await newService.updateNew(id, newu)
+                console.log('artlicle updated', response.data)
+            } else {
+                const response = await newService.createNew(newu)
+                console.log('Article created successfully:', response.data);
+                navigate('/')
+            }
         } catch (err) {
             setError("Failed to create article. Please check your information.");
             console.error('Error creating article:', err);
@@ -52,7 +66,7 @@ export default function NewFormulary() {
             <Container component="main" maxWidth="xs">
                 <Paper elevation={3} style={{ padding: '20px' }}>
                     <Typography variant="h5" component="h1" gutterBottom>
-                        Create a New
+                        {id ? 'Edit Article' : 'Create a New Article'}
                     </Typography>
                     {error && <Typography color='error'>{error}</Typography>}
                     <form onSubmit={handleSubmit}>

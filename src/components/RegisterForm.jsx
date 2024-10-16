@@ -7,7 +7,7 @@ const userService = new UserService();
 
 export default function RegisterForm() {
 
-    const [userName, setUsername] = useState('');
+    const [userName, setUserName] = useState('');
     const [password, setPassword] = useState('');
     const [email, setEmail] = useState('')
     const [error, setError] = useState('')
@@ -48,22 +48,30 @@ export default function RegisterForm() {
                             margin="normal"
                             required
                             fullWidth
-                            label="Title"
-                            value={title}
-                            onChange={(e) => setTitle(e.target.value)}
+                            label="Username"
+                            value={userName}
+                            onChange={(e) => setUserName(e.target.value)}
+                        />
+                         <TextField
+                            variant="outlined"
+                            margin="normal"
+                            required
+                            fullWidth
+                            type='email'
+                            label="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
                         />
                         <TextField
                             variant="outlined"
                             margin="normal"
                             required
                             fullWidth
-                            label="Content"
-                            value={content}
-                            onChange={(e) => setContent(e.target.value)}
-                            multiline
-                            rows={4}
+                            label="Password"
+                            type="password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
                         />
-                        
 
                         <Button
                             type="submit"

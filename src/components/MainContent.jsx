@@ -18,7 +18,7 @@ export default function MainContent() {
     const { news, setNews } = useNews();
     const [pageCount, setPageCount] = useState(0);
     const [currentPage, setCurrentPage] = useState(1);
-    
+ 
     const location = useLocation();
 
 
@@ -75,7 +75,7 @@ export default function MainContent() {
                 </div>
                 <div className="flex items-center justify-center p-3">
                     <Pagination
-                        count={pageCount}
+                        count={pageCount }
                         page={currentPage}
                         onChange={handlePageChange}
                         shape="rounded"

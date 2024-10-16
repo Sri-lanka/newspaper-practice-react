@@ -10,6 +10,7 @@ const newService = new NewService();
 import { useNavigate } from "react-router-dom";
 
 export default function Header() {
+  
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [newNames, setNewNames] = useState([]);
 
@@ -47,6 +48,9 @@ export default function Header() {
     localStorage.removeItem('user');
     setIsLoggedIn(false);
   }
+  const handleCreateNew = ( )=>{
+    navigate(`/create_new`)
+  } 
 
   return (
     <>
@@ -82,7 +86,7 @@ export default function Header() {
           ) : (
             <div className="flex items-center" >
               <Button variant="contained" onClick={handleLogout}>Cerrar Sesión</Button>
-              <Button variant="contained" >Crear noticia</Button>
+              <Button variant="contained" onClick={handleCreateNew} >Crear noticia</Button>
               <img className="w-24 h-auto  " src="../../public/gif/neco-arc-transparent.gif"  />
             </div>
           )}
