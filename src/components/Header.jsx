@@ -10,7 +10,7 @@ const newService = new NewService();
 import { useNavigate } from "react-router-dom";
 
 export default function Header() {
-  
+
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [newNames, setNewNames] = useState([]);
 
@@ -41,20 +41,21 @@ export default function Header() {
   const handleViewDetails = (id) => {
     navigate(`/news/${id}`);
   };
-  const handleLogin = () =>{
+  const handleLogin = () => {
     navigate(`/login`)
   }
-  const handleLogout = () =>{
+  const handleLogout = () => {
     localStorage.removeItem('user');
     setIsLoggedIn(false);
+    window.location.reload();
   }
-  const handleCreateNew = ( )=>{
+  const handleCreateNew = () => {
     navigate(`/create_new`)
-  } 
+  }
 
   return (
     <>
-      <div className="bg-blue-500 p-4">
+      <div className="bg-[#248eff] p-4">
         <div className="flex items-center p-4 rounded-md">
           <SearchIcon fontSize="large" />
           <Autocomplete
@@ -64,17 +65,36 @@ export default function Header() {
             onChange={handleSelect}
             renderInput={(params) => (
               <TextField
-                sx={{ width: 250 }}
+                sx={{
+                  width: 250,
+                  color: 'black',
+                  '& .MuiInputBase-input': {
+                    color: 'black',
+                  },
+                  '& .MuiInputLabel-root': {
+                    color: 'black',
+                  },
+                  '& .MuiInput-underline:before': {
+                    borderBottomColor: 'black',
+                  },
+                  '& .MuiInput-underline:hover:before': {
+                    borderBottomColor: 'black',
+                  },
+                  '& .MuiInput-underline:after': {
+                    borderBottomColor: 'black',
+                  }
+                }}
                 {...params}
                 id="standard-basic"
                 label="Search New"
                 variant="standard"
+
               />
             )}
           />
 
           <Typography
-            sx={{ mx: "auto", mr: 84, fontFamily: "monospace" }}
+            sx={{ mx: "auto", mr: 'auto', fontFamily: "monospace" }}
             variant="h3"
           >
             My Newspaper
@@ -85,9 +105,20 @@ export default function Header() {
             <Button variant="contained" onClick={handleLogin}>Iniciar Sesión</Button>
           ) : (
             <div className="flex items-center" >
-              <Button variant="contained" onClick={handleLogout}>Cerrar Sesión</Button>
-              <Button variant="contained" onClick={handleCreateNew} >Crear noticia</Button>
-              <img className="w-24 h-auto  " src="../../public/gif/neco-arc-transparent.gif"  />
+              <Button
+                variant="contained"
+                onClick={handleLogout}
+                sx={{ marginRight: 2 }}  
+              >
+                Cerrar Sesión
+              </Button>
+              <Button
+                variant="contained"
+                onClick={handleCreateNew}
+                sx={{ marginLeft: 2 }}   
+              >
+                Crear noticia
+              </Button>
             </div>
           )}
         </div>

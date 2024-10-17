@@ -17,7 +17,7 @@ export default function NewsDetails() {
   const navigate = useNavigate();
 
   const handleCategory = () => {
-    navigate(`/category_news/${newsItem.category.id}`); // Redirige a la ruta de detalles
+    navigate(`/category_news/${newsItem.category.id}`); 
   };
   const handleUser = () => {
     navigate(`/user_news/${newsItem.user.id}`)
@@ -38,7 +38,7 @@ export default function NewsDetails() {
 
   return !isLoading ? (
     <>
-      <div className="flex-grow bg-green-500">
+      <div className="flex-grow bg-[#f5f5f5]">
         <div className="flex flex-col items-center justify-center p-4">
           <Card sx={{ maxWidth: 700, maxHeight: 500 }}>
             <CardActionArea>

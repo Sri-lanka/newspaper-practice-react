@@ -7,6 +7,7 @@ import EditIcon from '@mui/icons-material/Edit';
 import { useNavigate } from "react-router-dom";
 import { useState,useEffect } from "react";
 export default function CardNew({ newItem }) {
+
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const userData = localStorage.getItem("user");
     useEffect(() => {
@@ -21,10 +22,14 @@ export default function CardNew({ newItem }) {
     const navigate = useNavigate();
 
     const handleViewDetails = () => {
-        navigate(`/news/${newItem.id}`); // Redirige a la ruta de detalles
+        navigate(`/news/${newItem.id}`);
     };
     const handleUserNews = () => {
         navigate(`/user_news/${newItem.user.id}`);
+    };
+
+     const handleEditNew = () => {
+        navigate(`/edit_new/${newItem.id}`);
     };
 
     const truncate = (title, limit) => {
@@ -51,7 +56,7 @@ export default function CardNew({ newItem }) {
                     <Button size="small" onClick={handleUserNews}>
                         @{newItem.user.userName}
                     </Button>
-                    {!isLoggedIn || user.id != newItem.user.id ? (null) : (<EditIcon></EditIcon>)}
+                    {!isLoggedIn || user.id != newItem.user.id ? (null) : (<EditIcon sx={{cursor:'pointer'}} onClick={handleEditNew}></EditIcon>)}
                 </CardActions>
             </Card>
         </>

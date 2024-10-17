@@ -52,8 +52,9 @@ export default function NewFormulary() {
             } else {
                 const response = await newService.createNew(newu)
                 console.log('Article created successfully:', response.data);
-                navigate('/')
+               
             }
+            navigate('/')
         } catch (err) {
             setError("Failed to create article. Please check your information.");
             console.error('Error creating article:', err);
@@ -117,7 +118,7 @@ export default function NewFormulary() {
                             color="primary"
                             style={{ marginTop: '16px' }}
                         >
-                            Create
+                            { id ? 'update' : 'Create'}
                         </Button>
                     </form>
                 </Paper>

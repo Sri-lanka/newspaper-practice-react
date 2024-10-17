@@ -26,8 +26,8 @@ export default function NavegationSet() {
     return (
         <>
         
-            <nav className='flex items-center justify-center bg-white'>
-                <ButtonGroup variant="text" aria-label="Basic button group">
+            <nav className='flex items-center justify-center bg-[#e0e0e0] '>
+                <ButtonGroup variant="text" aria-label="Basic button group" >
                     <Button onClick={handleHome}>Home</Button>
                     <Button onClick={handlePolitics}>Politics</Button>
                     <Button onClick={handleSports}>Sports</Button>

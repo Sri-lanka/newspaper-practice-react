@@ -19,6 +19,7 @@ function App() {
                 <Route path="/login" element={<Auth><LoginForm></LoginForm></Auth>} />
                 <Route path="/register" element={<Auth><RegisterForm></RegisterForm></Auth>} />
                 <Route path="/create_new" element={<Form><NewFormulary></NewFormulary></Form>} />
+                <Route path="/edit_new/:id" element={<Form><NewFormulary></NewFormulary></Form>} />
                 <Route path="/news/:id" element={<Index><NewsDetails /></Index>} />
                 <Route path="/user_news/:id" element={<Index><MainContent/></Index>} />
                 <Route path="/category_news/:id_category" element={<Index><MainContent/></Index>} />
