@@ -102,7 +102,7 @@ export default function Header() {
 
 
           {!isLoggedIn ? (
-            <Button variant="contained" onClick={handleLogin}>Iniciar Sesión</Button>
+            <Button variant="contained" onClick={handleLogin}>Log In</Button>
           ) : (
             <div className="flex items-center" >
               <Button
@@ -110,14 +110,14 @@ export default function Header() {
                 onClick={handleLogout}
                 sx={{ marginRight: 2 }}  
               >
-                Cerrar Sesión
+                Logout
               </Button>
               <Button
                 variant="contained"
                 onClick={handleCreateNew}
                 sx={{ marginLeft: 2 }}   
               >
-                Crear noticia
+                Create new
               </Button>
             </div>
           )}
