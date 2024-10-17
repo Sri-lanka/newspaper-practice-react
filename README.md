@@ -52,3 +52,7 @@ This project is licensed under the MIT License.
 ---
 
 Built with ❤️ by [Sri-lanka](https://github.com/Sri-lanka) and the backend developed by [**Oscar Navarro**.](https://github.com/OscarNavarrolol)
+
+![ec2237de-aadc-424b-afa0-771218304105](https://github.com/user-attachments/assets/2070d6ec-e6fd-4b0e-8bd0-e6372d7f2f91)
+
+
