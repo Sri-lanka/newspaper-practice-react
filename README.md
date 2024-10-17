@@ -45,8 +45,26 @@ The project uses **TailwindCSS** for rapid UI development, alongside **Material-
 - **NewFormulary**: Allows authenticated users to create or edit news.
 
 ## 🛠️ Screenshots
+Main page
 ![ec2237de-aadc-424b-afa0-771218304105](https://github.com/user-attachments/assets/2070d6ec-e6fd-4b0e-8bd0-e6372d7f2f91)
 
+Search
+![search](https://github.com/user-attachments/assets/ececed6e-2826-48e7-be34-268b63e03bdb)
+
+Category
+![category](https://github.com/user-attachments/assets/40fa0fd8-f038-4d56-ad16-11da801501ef)
+
+Auth Form
+![authForm](https://github.com/user-attachments/assets/3b50c307-28ec-4ad0-ba73-1e7694ba84fa)
+
+After Auth
+![afterAuth](https://github.com/user-attachments/assets/b3e8f0ba-c2b0-43bf-ad10-d02f6e912f31)
+
+New form 
+![createNew](https://github.com/user-attachments/assets/ff017c3b-6381-4b85-ba9f-d6b46d71a965)
+
+User section
+![userSection](https://github.com/user-attachments/assets/c55db234-0499-4ce7-bde3-19abea251cef)
 
 ## 📄 License
 
